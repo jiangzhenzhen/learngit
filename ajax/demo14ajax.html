@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="14demo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function(){
+
+                ajax();
+            }
+            setInterval(function(){
+                ajax();
+            },1000);
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="搜索" id="btn">
+<ul id="ul1"></ul>
+</body>
+</html>

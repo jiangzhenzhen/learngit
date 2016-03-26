@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function(){
+//              alert(12);
+                var xhr = null;
+
+               try{
+                    xhr = new XMLHttpRequest;
+                }catch(e){
+                    xhr = new ActiveXObject(Microsoft.XMLHTTP)
+                }
+
+                xhr.open('get','2.get.php ? username=刘伟&age=20',true);
+                xhr.send();
+
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            alert( typeof xhr.responseText);
+                        }else{
+                            alert('error');
+                        }
+                    }
+                }
+            };
+
+        };
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+</body>
+</html>
